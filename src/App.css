@@ -1,11 +1,19 @@
+.card {
+  margin: 10px;
+  background-color: #e6f7ff;
+}
 .head {
-  margin: auto;
   color: #ffffff;
   font-size: large;
   text-align: center;
 }
 .content {
-  text-align: center;
+  align-content: center;
   height: 100%;
-  margin: 10px;
+  margin: 0;
+  background-color: #ffffff;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #5b8c00;
+  border-color: #5b8c00;
 }
