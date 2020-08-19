@@ -5,7 +5,7 @@ import { CloseOutlined } from '@ant-design/icons';
 
 const Main = (props) => {
     const [todos, changeToDo] = useState([]);
-    const [toggleText, setToggleText] = useState("Hide Checked");
+    const [toggleText, setToggleText] = useState("Hide Completed Tasks");
     const [showChecked, setShowChecked] = useState(true);
     const [checkedTodos, setCheckedTodos] = useState([]);
 
@@ -28,7 +28,7 @@ const Main = (props) => {
             setCheckedTodos([]);
         }
         setShowChecked(!showChecked);
-        setToggleText(toggleText === "Hide Checked" ? "Show Checked" : "Hide Checked");
+        setToggleText(toggleText === "Hide Completed Tasks" ? "Show Completed Tasks" : "Hide Completed Tasks");
     }
 
     const setCheckedValue = (item) => {
