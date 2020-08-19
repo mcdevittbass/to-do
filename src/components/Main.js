@@ -18,6 +18,7 @@ const Main = (props) => {
     const handleRemove = (item) => {
         changeToDo(todos.filter(each => each.key !== item.key));
     }
+
     const switchDisplay = () => {
         //changes state before update, so showChecked will evaluate to true, though we want it to be false in this case
         if(showChecked === true) {

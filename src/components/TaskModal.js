@@ -6,6 +6,8 @@ const TaskModal = (props) => {
     const [visible, setModalOpen] = useState(false);
     const [newInput, setNewInput] = useState(null);
 
+    const [form] = Form.useForm();
+
     const addTask = () => {
         props.onSubmit(newInput);
         closeModal();
@@ -17,7 +19,9 @@ const TaskModal = (props) => {
     }
     const closeModal = () => {
         setModalOpen(false);
+        form.resetFields();
     }
+
 
     return (
         <>
@@ -28,7 +32,7 @@ const TaskModal = (props) => {
                 footer={null}>
                     <Row>
                         <Col span={20}>
-                            <Form>
+                            <Form form={form}>
                                 <Form.Item name='textInput'>
                                     <Input placeholder='Task' id='task-input' name='item' onChange={e => setNewInput(e.target.value)} />
                                 </Form.Item>
@@ -37,7 +41,7 @@ const TaskModal = (props) => {
                                         <Button type="default" style={{color: '#5b8c00'}} htmlType="cancel" onClick={closeModal}>
                                             Cancel
                                         </Button>
-                                        <Button type="primary" style={{background: '#5b8c00'}}htmlType="submit" onClick={addTask}>
+                                        <Button type="primary" style={{background: '#5b8c00'}} htmlType="submit" onClick={addTask}>
                                             Add Task
                                         </Button>
                                     </Space>                          
